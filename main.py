@@ -1,15 +1,21 @@
+import functions
+
 from card import Card
+from functions import check_card_already_drawn
 
 drawn_cards = []
 
 for i in range (10):
-    already_drawn = False
+    card = Card()
 
-    while already_drawn:
+    while check_card_already_drawn(drawn_cards, card):
         card = Card()
-        for drawn in drawn_cards:
-            if (drawn.suit == card.suit) and (card.value == drawn.value):
-                already_drawn = True
-            else:
-                print(card.rank + " of " + card.suit + " added")
-                drawn_cards.append(card)
+
+    drawn_cards.append(card)
+
+
+
+print("\n\nFinal 10 drawn cards")
+
+for card in drawn_cards:
+    print(card.rank + " of " + card.suit )
