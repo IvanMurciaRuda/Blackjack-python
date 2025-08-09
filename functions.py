@@ -4,3 +4,5 @@ def check_card_already_drawn(cards_drawn, card):
             print("The " + card.rank + " of " + card.suit + " has already been drawn.")
             return True
     return False
+
+#def players_turn():
