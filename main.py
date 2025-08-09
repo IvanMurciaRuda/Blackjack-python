@@ -1,13 +1,12 @@
-import functions
+from functions import players_turn
 
-from card import Card
-from functions import check_card_already_drawn
-
-drawn_cards = []
 print("Welcome to the Blackjack!")
 
 while 1:
+    #reset the gamestate
+    drawn_cards = []
     #player's and dealer's turn
+    player_score = players_turn(drawn_cards)
     play_again = input("would you like to play again? (y/n): ")
     if play_again == "n":
         break
